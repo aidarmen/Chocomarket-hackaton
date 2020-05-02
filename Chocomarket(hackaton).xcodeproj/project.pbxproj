@@ -1,0 +1,428 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5709942058D7E4B8B6410760 /* Pods_Chocomarket_hackaton_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */; };
+		9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7B8245C5E57003C436E /* AppDelegate.swift */; };
+		9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7BA245C5E57003C436E /* SceneDelegate.swift */; };
+		9552B7C0245C5E57003C436E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9552B7BE245C5E57003C436E /* Main.storyboard */; };
+		9552B7C2245C5E5C003C436E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9552B7C1245C5E5C003C436E /* Assets.xcassets */; };
+		9552B7C5245C5E5C003C436E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */; };
+		9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */; };
+		9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */; };
+		9552B7D1245C817A003C436E /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7D0245C817A003C436E /* ProductsTableViewController.swift */; };
+		9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7D4245C8604003C436E /* ProductManageViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).debug.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).debug.xcconfig"; sourceTree = "<group>"; };
+		1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chocomarket_hackaton_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).release.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).release.xcconfig"; sourceTree = "<group>"; };
+		9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chocomarket(hackaton).app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9552B7B8245C5E57003C436E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9552B7BA245C5E57003C436E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		9552B7BF245C5E57003C436E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9552B7C1245C5E5C003C436E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9552B7C4245C5E5C003C436E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9552B7C6245C5E5C003C436E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesCollectionViewController.swift; sourceTree = "<group>"; };
+		9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesCollectionViewCell.swift; sourceTree = "<group>"; };
+		9552B7D0245C817A003C436E /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
+		9552B7D4245C8604003C436E /* ProductManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManageViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9552B7B2245C5E57003C436E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5709942058D7E4B8B6410760 /* Pods_Chocomarket_hackaton_.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6450CCBD2DC907DF62AA4549 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BB33CC9EDE8023AE0AFE402 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */,
+				169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9552B7AC245C5E57003C436E = {
+			isa = PBXGroup;
+			children = (
+				9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */,
+				9552B7B6245C5E57003C436E /* Products */,
+				6BB33CC9EDE8023AE0AFE402 /* Pods */,
+				6450CCBD2DC907DF62AA4549 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		9552B7B6245C5E57003C436E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */ = {
+			isa = PBXGroup;
+			children = (
+				9552B7D4245C8604003C436E /* ProductManageViewController.swift */,
+				9552B7D0245C817A003C436E /* ProductsTableViewController.swift */,
+				9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */,
+				9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */,
+				9552B7B8245C5E57003C436E /* AppDelegate.swift */,
+				9552B7BA245C5E57003C436E /* SceneDelegate.swift */,
+				9552B7BE245C5E57003C436E /* Main.storyboard */,
+				9552B7C1245C5E5C003C436E /* Assets.xcassets */,
+				9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */,
+				9552B7C6245C5E5C003C436E /* Info.plist */,
+			);
+			path = "Chocomarket(hackaton)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9552B7B4245C5E57003C436E /* Chocomarket(hackaton) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9552B7C9245C5E5C003C436E /* Build configuration list for PBXNativeTarget "Chocomarket(hackaton)" */;
+			buildPhases = (
+				5D0A780E1DDBD5D60240F6E5 /* [CP] Check Pods Manifest.lock */,
+				9552B7B1245C5E57003C436E /* Sources */,
+				9552B7B2245C5E57003C436E /* Frameworks */,
+				9552B7B3245C5E57003C436E /* Resources */,
+				C816E02DF4395E688E523761 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Chocomarket(hackaton)";
+			productName = "Chocomarket(hackaton)";
+			productReference = 9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9552B7AD245C5E57003C436E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = Khaled;
+				TargetAttributes = {
+					9552B7B4245C5E57003C436E = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 9552B7B0245C5E57003C436E /* Build configuration list for PBXProject "Chocomarket(hackaton)" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9552B7AC245C5E57003C436E;
+			productRefGroup = 9552B7B6245C5E57003C436E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9552B7B4245C5E57003C436E /* Chocomarket(hackaton) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9552B7B3245C5E57003C436E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9552B7C5245C5E5C003C436E /* LaunchScreen.storyboard in Resources */,
+				9552B7C2245C5E5C003C436E /* Assets.xcassets in Resources */,
+				9552B7C0245C5E57003C436E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5D0A780E1DDBD5D60240F6E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Chocomarket(hackaton)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C816E02DF4395E688E523761 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9552B7B1245C5E57003C436E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */,
+				9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */,
+				9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */,
+				9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */,
+				9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */,
+				9552B7D1245C817A003C436E /* ProductsTableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9552B7BE245C5E57003C436E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9552B7BF245C5E57003C436E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9552B7C4245C5E5C003C436E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9552B7C7245C5E5C003C436E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9552B7C8245C5E5C003C436E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9552B7CA245C5E5C003C436E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2TJ2LD6H8;
+				INFOPLIST_FILE = "Chocomarket(hackaton)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9552B7CB245C5E5C003C436E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W2TJ2LD6H8;
+				INFOPLIST_FILE = "Chocomarket(hackaton)/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9552B7B0245C5E57003C436E /* Build configuration list for PBXProject "Chocomarket(hackaton)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9552B7C7245C5E5C003C436E /* Debug */,
+				9552B7C8245C5E5C003C436E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9552B7C9245C5E5C003C436E /* Build configuration list for PBXNativeTarget "Chocomarket(hackaton)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9552B7CA245C5E5C003C436E /* Debug */,
+				9552B7CB245C5E5C003C436E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9552B7AD245C5E57003C436E /* Project object */;
+}
