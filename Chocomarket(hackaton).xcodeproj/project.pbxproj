@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,10 @@
 		9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */; };
 		9552B7D1245C817A003C436E /* ProductsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7D0245C817A003C436E /* ProductsTableViewController.swift */; };
 		9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7D4245C8604003C436E /* ProductManageViewController.swift */; };
+		957E26BE245DCA99009A1819 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957E26BD245DCA99009A1819 /* InitialViewController.swift */; };
+		957E26C0245DCEC9009A1819 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957E26BF245DCEC9009A1819 /* GoogleService-Info.plist */; };
+		959B7CDA245DDC4000664D6B /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CD9245DDC4000664D6B /* signInViewController.swift */; };
+		959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDD245DF4A900664D6B /* logInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		9552B7D0245C817A003C436E /* ProductsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewController.swift; sourceTree = "<group>"; };
 		9552B7D4245C8604003C436E /* ProductManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductManageViewController.swift; sourceTree = "<group>"; };
+		957E26BD245DCA99009A1819 /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		957E26BF245DCEC9009A1819 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		959B7CD9245DDC4000664D6B /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
+		959B7CDD245DF4A900664D6B /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +70,6 @@
 				0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */,
 				169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -92,11 +99,15 @@
 				9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */,
 				9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */,
 				9552B7B8245C5E57003C436E /* AppDelegate.swift */,
+				959B7CD9245DDC4000664D6B /* signInViewController.swift */,
 				9552B7BA245C5E57003C436E /* SceneDelegate.swift */,
+				959B7CDD245DF4A900664D6B /* logInViewController.swift */,
 				9552B7BE245C5E57003C436E /* Main.storyboard */,
+				957E26BD245DCA99009A1819 /* InitialViewController.swift */,
 				9552B7C1245C5E5C003C436E /* Assets.xcassets */,
 				9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */,
 				9552B7C6245C5E5C003C436E /* Info.plist */,
+				957E26BF245DCEC9009A1819 /* GoogleService-Info.plist */,
 			);
 			path = "Chocomarket(hackaton)";
 			sourceTree = "<group>";
@@ -162,6 +173,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7C5245C5E5C003C436E /* LaunchScreen.storyboard in Resources */,
+				957E26C0245DCEC9009A1819 /* GoogleService-Info.plist in Resources */,
 				9552B7C2245C5E5C003C436E /* Assets.xcassets in Resources */,
 				9552B7C0245C5E57003C436E /* Main.storyboard in Resources */,
 			);
@@ -217,8 +229,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */,
+				959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */,
+				957E26BE245DCA99009A1819 /* InitialViewController.swift in Sources */,
 				9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */,
 				9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */,
+				959B7CDA245DDC4000664D6B /* signInViewController.swift in Sources */,
 				9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */,
 				9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */,
 				9552B7D1245C817A003C436E /* ProductsTableViewController.swift in Sources */,
