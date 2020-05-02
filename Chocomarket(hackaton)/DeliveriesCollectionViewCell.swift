@@ -25,4 +25,26 @@ class DeliveriesCollectionViewCell: UICollectionViewCell {
         self.statusImage.image = statusImage
         self.statusImage.tintColor = UIColor.red
     }
+    
+    func generateCell(_ delivery: Deliveries){
+        
+        self.deliveryDescr.text = "info"
+        
+        statusImage.image =  UIImage(systemName: "flag")!
+        
+        
+        deliveryNumber.text = "Delivery #"+delivery.id
+        
+        if (delivery.inProcces == "False"){
+            statusName.text = "NOT TAKEN"
+            statusName.textColor = UIColor.red
+            
+            statusImage.tintColor = UIColor.red
+        }else{
+            statusName.text = "IN PROCESS"
+            statusName.textColor = UIColor.green
+            statusImage.tintColor = UIColor.green
+        }
+        
+    }
 }

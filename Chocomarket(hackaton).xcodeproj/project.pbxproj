@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1CC457CA245DC9080048532C /* FirebaseCollectionReference.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC457C9245DC9080048532C /* FirebaseCollectionReference.swift */; };
+		1CC457CD245DCFEB0048532C /* Deliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC457CC245DCFEB0048532C /* Deliveries.swift */; };
+		1CC457D0245DD1580048532C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CC457CF245DD1580048532C /* GoogleService-Info.plist */; };
+		1CC457D2245DD5060048532C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CC457D1245DD5060048532C /* Constants.swift */; };
 		5709942058D7E4B8B6410760 /* Pods_Chocomarket_hackaton_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */; };
 		9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7B8245C5E57003C436E /* AppDelegate.swift */; };
 		9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7BA245C5E57003C436E /* SceneDelegate.swift */; };
@@ -23,6 +27,10 @@
 		0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).debug.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).debug.xcconfig"; sourceTree = "<group>"; };
 		1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chocomarket_hackaton_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).release.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).release.xcconfig"; sourceTree = "<group>"; };
+		1CC457C9245DC9080048532C /* FirebaseCollectionReference.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionReference.swift; sourceTree = "<group>"; };
+		1CC457CC245DCFEB0048532C /* Deliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deliveries.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		1CC457CF245DD1580048532C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1CC457D1245DD5060048532C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chocomarket(hackaton).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9552B7B8245C5E57003C436E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9552B7BA245C5E57003C436E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +56,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CC457CB245DCEC20048532C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1CC457C9245DC9080048532C /* FirebaseCollectionReference.swift */,
+				1CC457D1245DD5060048532C /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		1CC457CE245DCFF00048532C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1CC457CC245DCFEB0048532C /* Deliveries.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		6450CCBD2DC907DF62AA4549 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +87,6 @@
 				0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */,
 				169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,6 +114,7 @@
 				9552B7D4245C8604003C436E /* ProductManageViewController.swift */,
 				9552B7D0245C817A003C436E /* ProductsTableViewController.swift */,
 				9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */,
+				1CC457CE245DCFF00048532C /* Model */,
 				9552B7CE245C6626003C436E /* DeliveriesCollectionViewCell.swift */,
 				9552B7B8245C5E57003C436E /* AppDelegate.swift */,
 				9552B7BA245C5E57003C436E /* SceneDelegate.swift */,
@@ -97,6 +122,8 @@
 				9552B7C1245C5E5C003C436E /* Assets.xcassets */,
 				9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */,
 				9552B7C6245C5E5C003C436E /* Info.plist */,
+				1CC457CF245DD1580048532C /* GoogleService-Info.plist */,
+				1CC457CB245DCEC20048532C /* Helpers */,
 			);
 			path = "Chocomarket(hackaton)";
 			sourceTree = "<group>";
@@ -162,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7C5245C5E5C003C436E /* LaunchScreen.storyboard in Resources */,
+				1CC457D0245DD1580048532C /* GoogleService-Info.plist in Resources */,
 				9552B7C2245C5E5C003C436E /* Assets.xcassets in Resources */,
 				9552B7C0245C5E57003C436E /* Main.storyboard in Resources */,
 			);
@@ -217,11 +245,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */,
+				1CC457CA245DC9080048532C /* FirebaseCollectionReference.swift in Sources */,
 				9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */,
 				9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */,
 				9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */,
 				9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */,
 				9552B7D1245C817A003C436E /* ProductsTableViewController.swift in Sources */,
+				1CC457CD245DCFEB0048532C /* Deliveries.swift in Sources */,
+				1CC457D2245DD5060048532C /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,9 +396,39 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W2TJ2LD6H8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EmptyDataSet-Swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Gallery\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/InstantSearchClient\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/NVActivityIndicatorView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"/Users/aidar/Desktop/Chocomarket-hackaton/Chocomarket\\(hackaton\\).xcworkspace",
+				);
 				INFOPLIST_FILE = "Chocomarket(hackaton)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -376,6 +437,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -385,9 +447,39 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W2TJ2LD6H8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/BoringSSL-GRPC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/EmptyDataSet-Swift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseAuth\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreDiagnostics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseFirestore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseStorage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GTMSessionFetcher\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Gallery\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransportCCTSupport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/InstantSearchClient\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/JGProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/NVActivityIndicatorView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/abseil\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-C++\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/gRPC-Core\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/leveldb-library\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"/Users/aidar/Desktop/Chocomarket-hackaton/Chocomarket\\(hackaton\\).xcworkspace",
+				);
 				INFOPLIST_FILE = "Chocomarket(hackaton)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -396,6 +488,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
