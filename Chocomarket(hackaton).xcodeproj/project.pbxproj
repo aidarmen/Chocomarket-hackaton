@@ -21,6 +21,7 @@
 		957E26C0245DCEC9009A1819 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 957E26BF245DCEC9009A1819 /* GoogleService-Info.plist */; };
 		959B7CDA245DDC4000664D6B /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CD9245DDC4000664D6B /* signInViewController.swift */; };
 		959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDD245DF4A900664D6B /* logInViewController.swift */; };
+		959B7CE0245E02BA00664D6B /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		957E26BF245DCEC9009A1819 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		959B7CD9245DDC4000664D6B /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		959B7CDD245DF4A900664D6B /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
+		959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				959B7CD9245DDC4000664D6B /* signInViewController.swift */,
 				9552B7BA245C5E57003C436E /* SceneDelegate.swift */,
 				959B7CDD245DF4A900664D6B /* logInViewController.swift */,
+				959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */,
 				9552B7BE245C5E57003C436E /* Main.storyboard */,
 				957E26BD245DCA99009A1819 /* InitialViewController.swift */,
 				9552B7C1245C5E5C003C436E /* Assets.xcassets */,
@@ -232,6 +235,7 @@
 				959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */,
 				957E26BE245DCA99009A1819 /* InitialViewController.swift in Sources */,
 				9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */,
+				959B7CE0245E02BA00664D6B /* FirebaseAuthManager.swift in Sources */,
 				9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */,
 				959B7CDA245DDC4000664D6B /* signInViewController.swift in Sources */,
 				9552B7D5245C8604003C436E /* ProductManageViewController.swift in Sources */,

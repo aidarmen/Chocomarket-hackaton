@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 
 class DeliveriesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UINavigationBarDelegate {
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +38,37 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         // #warning Incomplete implementation, return the number of items
         return 1
     }
+    
+        override func viewWillAppear(_ animated: Bool) {
+            print("tut")
+//            if(Auth.auth().currentUser == nil){
+//                print("gavno")
+//            }
+            Auth.auth().addStateDidChangeListener { auth, user in
+              if let user = user {
+                // User is signed in. Show home screen
+                print("da")
+                
+//                ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
+//                  // Get user value
+//                  let value = snapshot.value as? NSDictionary
+//                  let username = value?["username"] as? String ?? ""
+//                  let user = User(username: username)
+//
+//                  // ...
+//                  }) { (error) in
+//                    print(error.localizedDescription)
+//                }
+              } else {
+                // No User is signed in. Show user the login screen
+                print("net")
+              }
+            }
+        
+        }
+        override func viewWillDisappear(_ animated: Bool) {
+            
+        }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "deliveryCell", for: indexPath) as! DeliveriesCollectionViewCell

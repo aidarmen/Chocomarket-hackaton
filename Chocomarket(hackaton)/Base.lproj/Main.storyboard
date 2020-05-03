@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WsL-Im-7HR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hOh-Mg-8UG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,7 +13,6 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hOh-Mg-8UG" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="AZA-F4-Ewe"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9QI-Gm-FVZ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -31,7 +30,7 @@
         <!--Delivery-->
         <scene sceneID="3Fg-gG-ibZ">
             <objects>
-                <collectionViewController id="3OY-k2-qIR" customClass="DeliveriesCollectionViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="deliveryCollection" id="3OY-k2-qIR" customClass="DeliveriesCollectionViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bouncesZoom="NO" dataMode="prototypes" id="GzJ-2z-Ulz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -368,12 +367,12 @@ files or click upload</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9p0-Q4-mdf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-743.47826086956525" y="-1272.3214285714284"/>
+            <point key="canvasLocation" x="-3968" y="110"/>
         </scene>
         <!--Log In-->
         <scene sceneID="yZs-Ui-b9M">
             <objects>
-                <viewController id="cdP-Ha-i1o" customClass="logInViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="logInViewController" id="cdP-Ha-i1o" customClass="logInViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OEX-lc-9uh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -412,28 +411,40 @@ files or click upload</string>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3DR-Ae-API">
-                                <rect key="frame" x="108" y="495" width="200" height="55"/>
+                                <rect key="frame" x="108" y="495" width="200" height="76"/>
                                 <color key="backgroundColor" red="0.57647058819999997" green="0.47058823529999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Login">
                                     <color key="titleColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logInButtonTapped:" destination="cdP-Ha-i1o" eventType="touchUpInside" id="R8N-m0-VgY"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zix-a0-FV4">
+                                <rect key="frame" x="106" y="642" width="202" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gr5-2v-3BU" firstAttribute="top" relation="lessThanOrEqual" secondItem="8Um-Z1-gZm" secondAttribute="bottom" constant="30" id="26r-PE-1ba"/>
+                            <constraint firstItem="WpS-vq-0Wh" firstAttribute="bottom" secondItem="zix-a0-FV4" secondAttribute="bottom" constant="220" id="Hqa-b0-7cV"/>
                             <constraint firstItem="gr5-2v-3BU" firstAttribute="leading" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="54" id="JN7-pr-PKR"/>
                             <constraint firstItem="3DR-Ae-API" firstAttribute="leading" relation="lessThanOrEqual" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="108" id="JVp-Sd-Dbn"/>
                             <constraint firstItem="Plc-eS-ZYL" firstAttribute="top" relation="lessThanOrEqual" secondItem="Ld9-8A-lEm" secondAttribute="bottom" constant="24" id="MV8-aD-zou"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" secondItem="EWN-EG-dX1" secondAttribute="trailing" constant="48" id="ONu-zw-AD3"/>
                             <constraint firstItem="Hmx-Pp-yiL" firstAttribute="leading" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="51" id="PZp-tU-q8d"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gr5-2v-3BU" secondAttribute="trailing" constant="315" id="QiX-WU-IPm"/>
+                            <constraint firstItem="zix-a0-FV4" firstAttribute="top" secondItem="3DR-Ae-API" secondAttribute="bottom" constant="71" id="RZ8-bO-1fp"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="3DR-Ae-API" secondAttribute="trailing" constant="106" id="TYy-lp-7FO"/>
                             <constraint firstItem="Ld9-8A-lEm" firstAttribute="leading" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="48" id="UJa-kZ-y7h"/>
                             <constraint firstItem="8Um-Z1-gZm" firstAttribute="top" relation="lessThanOrEqual" secondItem="Hmx-Pp-yiL" secondAttribute="bottom" constant="24" id="XLC-at-xAm"/>
                             <constraint firstItem="Plc-eS-ZYL" firstAttribute="leading" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="48" id="XtE-OJ-qvM"/>
+                            <constraint firstItem="zix-a0-FV4" firstAttribute="leading" secondItem="WpS-vq-0Wh" secondAttribute="leading" constant="106" id="ZZ4-Z4-hzd"/>
+                            <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" secondItem="zix-a0-FV4" secondAttribute="trailing" constant="106" id="dr5-dk-mkE"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Ld9-8A-lEm" secondAttribute="trailing" constant="327" id="e9h-ej-UnS"/>
-                            <constraint firstItem="WpS-vq-0Wh" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="3DR-Ae-API" secondAttribute="bottom" constant="312" id="esK-6k-Tve"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" secondItem="8Um-Z1-gZm" secondAttribute="trailing" constant="48" id="fx0-nw-tk9"/>
                             <constraint firstItem="WpS-vq-0Wh" firstAttribute="trailing" secondItem="Plc-eS-ZYL" secondAttribute="trailing" constant="48" id="j0T-jO-gSS"/>
                             <constraint firstItem="Hmx-Pp-yiL" firstAttribute="top" relation="lessThanOrEqual" secondItem="Plc-eS-ZYL" secondAttribute="bottom" constant="24" id="mzc-QM-Ttw"/>
@@ -449,6 +460,7 @@ files or click upload</string>
                     <navigationItem key="navigationItem" title="Log In" id="twc-2y-Rsf"/>
                     <connections>
                         <outlet property="emailText" destination="8Um-Z1-gZm" id="kLh-zf-ZGu"/>
+                        <outlet property="errorLabel" destination="zix-a0-FV4" id="U49-pC-1L2"/>
                         <outlet property="nameText" destination="Plc-eS-ZYL" id="uay-Ok-1p0"/>
                         <outlet property="passwordText" destination="EWN-EG-dX1" id="9Dt-4e-P1P"/>
                         <outlet property="submitButton" destination="3DR-Ae-API" id="PpZ-Y0-xMA"/>
@@ -456,7 +468,7 @@ files or click upload</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Df5-P4-n2h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="292.75362318840581" y="-1709.5982142857142"/>
+            <point key="canvasLocation" x="-2749.275362318841" y="-344.19642857142856"/>
         </scene>
         <!--Sign In-->
         <scene sceneID="aN6-df-8BV">
@@ -528,12 +540,21 @@ files or click upload</string>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBr-aF-5Qb">
-                                <rect key="frame" x="107" y="650" width="200" height="55"/>
+                                <rect key="frame" x="107" y="650" width="200" height="77"/>
                                 <color key="backgroundColor" red="0.57647058819999997" green="0.47058823529999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Sign Up">
                                     <color key="titleColor" red="0.97254901959999995" green="0.96862745100000003" blue="0.99607843139999996" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="signUpButtonTapped:" destination="LYo-N4-ECX" eventType="touchUpInside" id="qTW-Xc-OK4"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcI-fb-KP8">
+                                <rect key="frame" x="107" y="771" width="200" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.97254901960784312" green="0.96862745098039216" blue="0.99607843137254903" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -543,10 +564,13 @@ files or click upload</string>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" secondItem="lea-Mb-Ik4" secondAttribute="trailing" constant="48" id="6gp-A9-vKq"/>
                             <constraint firstItem="7tP-VX-X5d" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="8nX-bA-RYK"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" secondItem="2vM-IZ-G91" secondAttribute="trailing" constant="48" id="ApK-6V-abo"/>
+                            <constraint firstItem="a7c-MR-ZG4" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="EcI-fb-KP8" secondAttribute="bottom" constant="91" id="EfJ-Uy-16C"/>
                             <constraint firstItem="UJg-N9-YGo" firstAttribute="top" relation="lessThanOrEqual" secondItem="7tP-VX-X5d" secondAttribute="bottom" constant="32" id="GFi-qW-jnH"/>
+                            <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" secondItem="EcI-fb-KP8" secondAttribute="trailing" constant="107" id="IOm-DM-tM8"/>
                             <constraint firstItem="xBr-aF-5Qb" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="107" id="JTK-Jv-rcF"/>
                             <constraint firstItem="Tgu-Pg-r2e" firstAttribute="top" relation="lessThanOrEqual" secondItem="8Nh-JL-8Rt" secondAttribute="bottom" constant="36" id="L1w-Az-jyE"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" secondItem="8Nh-JL-8Rt" secondAttribute="trailing" constant="48" id="LrS-QJ-soo"/>
+                            <constraint firstItem="EcI-fb-KP8" firstAttribute="top" secondItem="xBr-aF-5Qb" secondAttribute="bottom" constant="44" id="Nro-8W-oFC"/>
                             <constraint firstItem="CPH-10-dKv" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="NwL-hh-bE0"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" secondItem="7tP-VX-X5d" secondAttribute="trailing" constant="48" id="OUo-6F-GKe"/>
                             <constraint firstItem="8Nh-JL-8Rt" firstAttribute="top" relation="lessThanOrEqual" secondItem="qjU-57-ZIB" secondAttribute="bottom" constant="24" id="Qa5-8X-TUe"/>
@@ -554,13 +578,13 @@ files or click upload</string>
                             <constraint firstItem="qjU-57-ZIB" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="Rse-Vs-uBj"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="CPH-10-dKv" secondAttribute="trailing" constant="283" id="dUQ-SG-Ovy"/>
                             <constraint firstItem="7tP-VX-X5d" firstAttribute="top" relation="lessThanOrEqual" secondItem="Tgu-Pg-r2e" secondAttribute="bottom" constant="24" id="dt1-ki-5f9"/>
-                            <constraint firstItem="a7c-MR-ZG4" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="xBr-aF-5Qb" secondAttribute="bottom" constant="157" id="e9X-E7-ulW"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="qjU-57-ZIB" secondAttribute="trailing" constant="261" id="eg8-hl-pQh"/>
                             <constraint firstItem="qjU-57-ZIB" firstAttribute="top" relation="lessThanOrEqual" secondItem="2vM-IZ-G91" secondAttribute="bottom" constant="25" id="fIx-Fq-B4g"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="Tgu-Pg-r2e" secondAttribute="trailing" constant="258" id="gH4-w3-spV"/>
                             <constraint firstItem="8Nh-JL-8Rt" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="gzh-im-McB"/>
                             <constraint firstItem="2vM-IZ-G91" firstAttribute="top" relation="lessThanOrEqual" secondItem="CPH-10-dKv" secondAttribute="bottom" constant="24" id="hKU-lI-Y7z"/>
                             <constraint firstItem="UJg-N9-YGo" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="jbE-GA-sor"/>
+                            <constraint firstItem="EcI-fb-KP8" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="107" id="lY0-Z6-8ex"/>
                             <constraint firstItem="2vM-IZ-G91" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="nUe-Z2-xo7"/>
                             <constraint firstItem="a7c-MR-ZG4" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="UJg-N9-YGo" secondAttribute="trailing" constant="292" id="o0G-B2-gdr"/>
                             <constraint firstItem="lea-Mb-Ik4" firstAttribute="leading" secondItem="a7c-MR-ZG4" secondAttribute="leading" constant="48" id="pvN-Oi-71e"/>
@@ -575,6 +599,7 @@ files or click upload</string>
                     <connections>
                         <outlet property="delivererOrNot" destination="LBH-Dq-h2R" id="GkN-ee-wsY"/>
                         <outlet property="emailText" destination="7tP-VX-X5d" id="Iuj-0x-xpn"/>
+                        <outlet property="errorLabel" destination="EcI-fb-KP8" id="GNj-QY-RmU"/>
                         <outlet property="firstNameText" destination="2vM-IZ-G91" id="Jtp-PZ-TmX"/>
                         <outlet property="passwordText" destination="lea-Mb-Ik4" id="LDd-SX-UMw"/>
                         <outlet property="phoneText" destination="8Nh-JL-8Rt" id="Tfz-xV-KIE"/>
@@ -584,12 +609,12 @@ files or click upload</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYt-bO-PnX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="V9g-Yd-uvS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="347.82608695652175" y="-859.15178571428567"/>
+            <point key="canvasLocation" x="-2749.275362318841" y="446.65178571428567"/>
         </scene>
         <!--Item-->
         <scene sceneID="NY2-st-2MR">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V5-Rj-MB3" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="test2" automaticallyAdjustsScrollViewInsets="NO" id="3V5-Rj-MB3" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="cart" catalog="system" selectedImage="cart" id="0uq-0p-4uz"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wty-NN-MwH">
@@ -640,7 +665,7 @@ files or click upload</string>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OJd-Pn-qdE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1653.6231884057972" y="-1272.3214285714284"/>
+            <point key="canvasLocation" x="-5145" y="110"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

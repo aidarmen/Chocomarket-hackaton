@@ -14,6 +14,7 @@ pod 'InstantSearchClient'
 pod 'EmptyDataSet-Swift'
 pod 'NVActivityIndicatorView/AppExtension'
 pod 'JGProgressHUD'
+pod 'Firebase/Database'
 
 
   # Pods for Chocomarket(hackaton)
