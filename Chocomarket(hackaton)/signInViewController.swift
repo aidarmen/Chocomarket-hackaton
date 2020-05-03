@@ -69,7 +69,7 @@ class signInViewController: UIViewController {
             
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["first_name" : firstName, "phone": phone, "email": email, "password": password, "uid": result!.user.uid]) { (error) in
+                db.collection("users").addDocument(data: ["name" : firstName, "phone": phone, "email": email, "password": password, "uid": result!.user.uid]) { (error) in
                     if error != nil {
                         // Show error message
                         self.errorLabel.text = "Error saving user data"

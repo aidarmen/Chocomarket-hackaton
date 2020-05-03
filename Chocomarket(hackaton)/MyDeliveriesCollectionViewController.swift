@@ -16,69 +16,116 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
     func MoreButtonTapped(sender: DeliveriesCollectionViewCell) {
         print()
     }
-    
+    var counter = 0
 
     
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
     var deliveries: [Deliveries] = []
+    var indexOfProduct = 35
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let width = (view.frame.size.width - 50)
-        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width-200)
-        ref = Database.database().reference()
-        let db = Firestore.firestore()
         
-        db.collection("Deliveries").getDocuments { (snapshot, error) in
-                    let document = snapshot?.documents
-        //            print(type(of: ))
-                    
-                    
-                    for i in 0...(snapshot?.documents.count)!-1{
-                        let deliverer = document![i].data()["deliverer"] as! String?
-                        let inProcess = Bool(document![i].data()["inProcess"] as! String)!
-                        let objectId = document![i].documentID
-                        let products = document![i].data()["products"] as! Dictionary<String, [String]>
-    
-                        var name:String = ""
-
-                        if(Auth.auth().currentUser != nil){
-                                let userID : String = (Auth.auth().currentUser?.uid)!
-                                 print("Current user ID is" + userID)
-                            self.ref = Database.database().reference()
-                                self.ref?.child("first_name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
-                                    print("qqqqqqqqqq")
-                                    let db = Firestore.firestore()
-                                    db.collection("users").getDocuments { (query, error) in
-                                        let document = query?.documents.first?.data()["first_name"]
-                                        name = document as! String
-                                        
-                                    }
-
-
-                                 })
-                        }
-                        
-                        
-                        
-                        if(name == deliverer){
-                            let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products)
-                        DispatchQueue.main.async {
-                            self.deliveries.append(newDelivery)
-                            self.collectionView.reloadData()
-                        }
-                        
-                        }
-                    }
-                
-
-                    
-                }
     }
+    
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        deliveries = []
+        counter = 0
+        collectionView.reloadData()
+        print("yshel")
+        
+    }
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("prishel")
+        print(deliveries.count)
+        if(counter == 0){
+            print(counter, "counter")
+            let width = (view.frame.size.width - 50)
+                let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+                layout.itemSize = CGSize(width: width, height: width-200)
+                ref = Database.database().reference()
+                let db = Firestore.firestore()
+                
+                db.collection("Deliveries").getDocuments { (snapshot, error) in
+                            let document = snapshot?.documents
+                //            print(type(of: ))
+                            
+                            
+                            for i in 0...(snapshot?.documents.count)!-1{
+                                let deliverer = document![i].data()["deliverer"] as! String?
+                                let id = document![i].data()["id"] as! String?
+                                let inProcess = document![i].data()["inProcess"] as! String
+                                let objectId = document![i].documentID
+                                let products = document![i].data()["products"] as! Dictionary<String, [String]>
+            
+                                print(id!, "eto AIDI NONVOOO")
+
+                                if(Auth.auth().currentUser != nil){
+                                        let userID : String = (Auth.auth().currentUser?.uid)!
+                                         print("Current user ID is" + userID)
+                                    self.ref = Database.database().reference()
+                                        self.ref?.child("name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+                                            let db = Firestore.firestore()
+                                            db.collection("users").getDocuments { (query, error) in
+                                                let document = query?.documents.first?.data()["name"]
+                                                
+                                                
+                                                print(userID,"IMYA")
+                                                print(id,"Sohr")
+                                                if(userID == id){
+                                                    print("AKKAKAAKAKAKA")
+                                                    let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products, id: id)
+                                                DispatchQueue.main.async {
+                                                    self.deliveries.append(newDelivery)
+                                                    self.collectionView.reloadData()
+                                                }
+                                                
+                                                }
+                                            }
+
+
+                                         })
+                                    
+                                    
+                                }
+                                
+                                
+                                
+                                
+                            }
+                        
+
+                            
+                        }
+            
+            counter+=1
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        indexOfProduct = indexPath.row
+        performSegue(withIdentifier: "showMyDeliveryProducts", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMyDeliveryProducts"{
+            let destin = segue.destination as? myDeliveryProductsTableViewController
+           // destin?.index = indexOfProduct
+            let item = deliveries[indexOfProduct]
+            print(item.products)
+            destin?.products = item.products
+        }
+    }
+    
+    
 
     /*
     // MARK: - Navigation
@@ -111,19 +158,23 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
                 let delivery = deliveries[indexPath.row]
                 
                 var TakenOrNot = ""
-                var image: UIImage
-                var color: UIColor
-                if(delivery.inProcess){
+                var image: UIImage?
+                var color: UIColor?
+                if(delivery.inProcess == "inProcess"){
                     TakenOrNot = "In Process"
-                    image = UIImage(systemName: "checkmark")!
-                    color = UIColor.green
-                } else {
+                    image = UIImage(systemName: "clock")!
+                    color = UIColor.yellow
+                } else if(delivery.inProcess == "notTaken") {
                     TakenOrNot = "Not Taken"
                     image = UIImage(systemName: "flag")!
                     color = UIColor.red
+                } else if(delivery.inProcess == "done"){
+                    TakenOrNot = "Done"
+                    image = UIImage(systemName: "checkmark")!
+                    color = UIColor.green
                 }
                 
-                cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image, statusName: TakenOrNot, color: color)
+                cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image!, statusName: TakenOrNot, color: color!)
         //        cell.update(deliveryNumber: delivery.objectId, deliveryDescr: "Description", statusImage: <#T##UIImage#>, statusName: <#T##String#>)
                 cell.layer.cornerRadius = 10
             

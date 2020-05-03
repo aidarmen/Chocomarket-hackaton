@@ -13,7 +13,7 @@ protocol DeliveryCellDelegate: class {
 }
 
 class DeliveriesCollectionViewCell: UICollectionViewCell {
-    
+    var id: Int?
     weak var delegate: DeliveryCellDelegate?
     
     @IBOutlet weak var deliveryNumber: UILabel!
@@ -34,6 +34,8 @@ class DeliveriesCollectionViewCell: UICollectionViewCell {
     
     @IBAction func moreButtonTapped(_ sender: Any) {
         delegate?.MoreButtonTapped(sender: self)
+        print("tuta2")
+        
     }
     
 }

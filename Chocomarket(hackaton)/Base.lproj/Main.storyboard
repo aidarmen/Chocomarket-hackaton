@@ -62,8 +62,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-3a-TCI">
-                                            <rect key="frame" x="191.5" y="10" width="18.5" height="17"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Dbx-3a-TCI">
+                                            <rect key="frame" x="190" y="8.5" width="20" height="19.5"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blQ-cf-HKj">
                                             <rect key="frame" x="8" y="36.5" width="296" height="20.5"/>
@@ -75,15 +75,11 @@
                                             <rect key="frame" x="8" y="93" width="123" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Nk-WJ-8k5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
                                                     <state key="normal" title="More"/>
                                                     <connections>
                                                         <action selector="moreButtonTapped:" destination="fk5-yn-utA" eventType="touchUpInside" id="Alk-Lh-pGm"/>
                                                     </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNP-ln-4LX">
-                                                    <rect key="frame" x="93" y="0.0" width="30" height="30"/>
-                                                    <state key="normal" title="Edit"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -128,10 +124,58 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7k2-Xl-agb" kind="show" identifier="showDeliveryProducts" id="RxP-qb-fwe"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrW-at-59o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="-225"/>
+        </scene>
+        <!--Products-->
+        <scene sceneID="G8s-yn-lem">
+            <objects>
+                <tableViewController id="7k2-Xl-agb" customClass="deliveryProductsTableViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hTT-Dn-LPj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="deliveryProducts" textLabel="53j-y5-zHB" detailTextLabel="T0B-FH-gOo" style="IBUITableViewCellStyleValue1" id="a1z-CC-d2o">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a1z-CC-d2o" id="pBU-yO-AaM">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="53j-y5-zHB">
+                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="T0B-FH-gOo">
+                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7k2-Xl-agb" id="lQV-qa-Ynl"/>
+                            <outlet property="delegate" destination="7k2-Xl-agb" id="9mD-Lr-YwQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Products" id="1hK-sr-E74"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eeb-lf-it8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1290" y="-225"/>
         </scene>
         <!--Products-->
         <scene sceneID="gqs-EH-V3a">
@@ -179,7 +223,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fr-xb-twV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1328" y="483"/>
+            <point key="canvasLocation" x="1339" y="1198"/>
         </scene>
         <!--Product Manage View Controller-->
         <scene sceneID="mTQ-nD-4Ua">
@@ -245,7 +289,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vi-a0-Da2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="rJh-wv-lPf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2136" y="483"/>
+            <point key="canvasLocation" x="2196" y="1198"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="M4o-ae-6kj">
@@ -664,15 +708,11 @@
                                             <rect key="frame" x="8" y="93" width="123" height="30"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UD9-WH-dAM">
-                                                    <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="123" height="30"/>
                                                     <state key="normal" title="More"/>
                                                     <connections>
                                                         <action selector="moreButtonTapped:" destination="7ah-TG-tMT" eventType="touchUpInside" id="OIM-YS-gYp"/>
                                                     </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnz-Zk-oab">
-                                                    <rect key="frame" x="93" y="0.0" width="30" height="30"/>
-                                                    <state key="normal" title="Edit"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -710,15 +750,64 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="My Delivery" id="Q2i-jJ-gQG"/>
+                    <connections>
+                        <segue destination="mwl-or-ibl" kind="show" identifier="showMyDeliveryProducts" id="uZV-vn-QQu"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1gK-YH-mPc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="419" y="483"/>
         </scene>
+        <!--Products-->
+        <scene sceneID="f05-KK-svQ">
+            <objects>
+                <tableViewController id="mwl-or-ibl" customClass="myDeliveryProductsTableViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="RXV-MA-ddi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myDeliveryProducts" textLabel="Kvc-TD-vKW" detailTextLabel="Eq0-u1-ZKt" style="IBUITableViewCellStyleValue1" id="tht-Tq-rq9">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tht-Tq-rq9" id="kQr-T0-gvU">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Kvc-TD-vKW">
+                                            <rect key="frame" x="20" y="12" width="33.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Eq0-u1-ZKt">
+                                            <rect key="frame" x="350" y="12" width="44" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="mwl-or-ibl" id="cvC-bG-gJL"/>
+                            <outlet property="delegate" destination="mwl-or-ibl" id="Dmn-Xb-dd6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Products" id="h8B-bh-czM"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VWc-YL-26n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="479"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
         <image name="tray.and.arrow.down" catalog="system" width="128" height="109"/>
     </resources>
 </document>

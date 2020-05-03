@@ -10,15 +10,17 @@ import Foundation
 
 class Deliveries{
     var deliverer: String?
-    var inProcess: Bool
+    var inProcess: String
     var objectId: String
     var products: [String:[String]]
+    var id: String?
     
-    init(deliverer: String?, inProcess: Bool, objectId: String, products: [String:[String]]){
+    init(deliverer: String?, inProcess: String, objectId: String, products: [String:[String]], id: String?){
         self.deliverer = deliverer
         self.inProcess = inProcess
         self.objectId = objectId
         self.products = products
+        self.id = id
     }
     
 }

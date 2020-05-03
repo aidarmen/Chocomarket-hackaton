@@ -13,20 +13,40 @@ import FirebaseDatabase
 
 class DeliveriesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UINavigationBarDelegate, DeliveryCellDelegate {
     
-    func MoreButtonTapped(sender: DeliveriesCollectionViewCell) {
-        if let indexPath = collectionView.indexPath(for: sender){
-            var items = deliveries[indexPath.row]
-            
-//            let secondViewController = (self.storyboard?.instantiateViewController(withIdentifier: "initial"))! as! InitialViewController
-//            self.navigationController!.pushViewController(secondViewController, animated: true)
-        }
-    }
-    
-
+    var indexOfProduct = 35
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
     var deliveries: [Deliveries] = []
+    
+    func MoreButtonTapped(sender: DeliveriesCollectionViewCell) {
+        print("tuta")
+        if let indexPath = collectionView.indexPath(for: sender){
+            var items = deliveries[indexPath.row]
+            indexOfProduct = indexPath.row
+            print("tuta")
+        }
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        indexOfProduct = indexPath.row
+        performSegue(withIdentifier: "showDeliveryProducts", sender: nil)
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDeliveryProducts"{
+            let destin = segue.destination as? deliveryProductsTableViewController
+           // destin?.index = indexOfProduct
+            let item = deliveries[indexOfProduct]
+            destin?.products = item.products
+        }
+    }
+    
+    
+    
+
+    
     
     
     override func viewDidLoad() {
@@ -44,22 +64,24 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
             
             for i in 0...(snapshot?.documents.count)!-1{
                 let deliverer = document![i].data()["deliverer"] as! String?
-                let inProcess = Bool(document![i].data()["inProcess"] as! String)!
+                let inProcess = document![i].data()["inProcess"] as! String
+                let id = document![i].data()["id"] as! String?
                 let objectId = document![i].documentID
                 let products = document![i].data()["products"] as! Dictionary<String, [String]>
+                
 //                print(type(of: inProcess), "process")
 //                print(type(of: deliverer), "deliver")
 //                print(type(of: objectId), "id")
 //                print(type(of: products), "produ")if
                 
-                
-                    let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products)
+                if(inProcess != "inProcess"){
+                    let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products, id: id)
                 DispatchQueue.main.async {
                     self.deliveries.append(newDelivery)
                     self.collectionView.reloadData()
                 }
                 
-                
+                }
             }
         
 
@@ -69,6 +91,7 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         
 //        print(self.deliveries.count)
     }
+    
 
 
     // MARK: UICollectionViewDataSource
@@ -81,7 +104,7 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        print(deliveries.count)
+        //print(deliveries.count)
         return deliveries.count
     }
     
@@ -96,20 +119,26 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
     }
     
     
+    override func viewDidDisappear(_ animated: Bool) {
+//        deliveries = []
+    }
+    
+    
+    
         override func viewWillAppear(_ animated: Bool) {
             
-            
+            print(indexOfProduct, "idishka")
             
             if(Auth.auth().currentUser != nil){
             let userID : String = (Auth.auth().currentUser?.uid)!
              print("Current user ID is" + userID)
             ref = Database.database().reference()
-            self.ref?.child("first_name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
-                print("qqqqqqqqqq")
+            self.ref?.child("name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+                //print("qqqqqqqqqq")
                 let db = Firestore.firestore()
                 db.collection("users").getDocuments { (query, error) in
                     let document = query?.documents.first?.data()["phone"]
-                    print(document!)
+                    //print(document!)
                 }
 
 
@@ -123,10 +152,7 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
             
             
     }
-        override func viewWillDisappear(_ animated: Bool) {
-            
-        }
-
+        
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "deliveryCell", for: indexPath) as! DeliveriesCollectionViewCell
         
@@ -135,20 +161,25 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         let delivery = deliveries[indexPath.row]
         
         var TakenOrNot = ""
-        var image: UIImage
-        var color: UIColor
-        if(delivery.inProcess){
+        var image: UIImage?
+        var color: UIColor?
+        
+        if(delivery.inProcess == "inProcess"){
             TakenOrNot = "In Process"
-            image = UIImage(systemName: "checkmark")!
-            color = UIColor.green
-        } else {
+            image = UIImage(systemName: "clock")!
+            color = UIColor.yellow
+        } else if(delivery.inProcess == "notTaken") {
             TakenOrNot = "Not Taken"
             image = UIImage(systemName: "flag")!
             color = UIColor.red
+        } else if(delivery.inProcess == "done"){
+            TakenOrNot = "Done"
+            image = UIImage(systemName: "checkmark")!
+            color = UIColor.green
         }
         
-        cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image, statusName: TakenOrNot, color: color)
-//        cell.update(deliveryNumber: delivery.objectId, deliveryDescr: "Description", statusImage: <#T##UIImage#>, statusName: <#T##String#>)
+        cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image!, statusName: TakenOrNot, color: color!)
+        
         cell.layer.cornerRadius = 10
     
         return cell
