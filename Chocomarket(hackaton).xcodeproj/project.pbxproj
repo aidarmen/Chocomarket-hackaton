@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5709942058D7E4B8B6410760 /* Pods_Chocomarket_hackaton_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */; };
+		950B2F60245F16A7004A5350 /* MyDeliveriesCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B2F5F245F129A004A5350 /* MyDeliveriesCollectionViewController.swift */; };
 		9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7B8245C5E57003C436E /* AppDelegate.swift */; };
 		9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7BA245C5E57003C436E /* SceneDelegate.swift */; };
 		9552B7C0245C5E57003C436E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9552B7BE245C5E57003C436E /* Main.storyboard */; };
@@ -22,12 +23,15 @@
 		959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDD245DF4A900664D6B /* logInViewController.swift */; };
 		959B7CE0245E02BA00664D6B /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */; };
 		95BD62BF245EC5720086F131 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BD62BE245EC5720086F131 /* GoogleService-Info.plist */; };
+		95BD62C2245EEE1A0086F131 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD62C1245EEE1A0086F131 /* Products.swift */; };
+		95BD62C3245EEF700086F131 /* Deliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD62C0245EED810086F131 /* Deliveries.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).debug.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).debug.xcconfig"; sourceTree = "<group>"; };
 		1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chocomarket_hackaton_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).release.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).release.xcconfig"; sourceTree = "<group>"; };
+		950B2F5F245F129A004A5350 /* MyDeliveriesCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDeliveriesCollectionViewController.swift; sourceTree = "<group>"; };
 		9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chocomarket(hackaton).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9552B7B8245C5E57003C436E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9552B7BA245C5E57003C436E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +48,8 @@
 		959B7CDD245DF4A900664D6B /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		95BD62BE245EC5720086F131 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		95BD62C0245EED810086F131 /* Deliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deliveries.swift; sourceTree = "<group>"; };
+		95BD62C1245EEE1A0086F131 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 		9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */ = {
 			isa = PBXGroup;
 			children = (
+				950B2F5F245F129A004A5350 /* MyDeliveriesCollectionViewController.swift */,
+				95BD62C1245EEE1A0086F131 /* Products.swift */,
+				95BD62C0245EED810086F131 /* Deliveries.swift */,
 				95BD62BE245EC5720086F131 /* GoogleService-Info.plist */,
 				9552B7D4245C8604003C436E /* ProductManageViewController.swift */,
 				9552B7D0245C817A003C436E /* ProductsTableViewController.swift */,
@@ -232,7 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */,
+				950B2F60245F16A7004A5350 /* MyDeliveriesCollectionViewController.swift in Sources */,
+				95BD62C2245EEE1A0086F131 /* Products.swift in Sources */,
 				959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */,
+				95BD62C3245EEF700086F131 /* Deliveries.swift in Sources */,
 				957E26BE245DCA99009A1819 /* InitialViewController.swift in Sources */,
 				9552B7CD245C65E4003C436E /* DeliveriesCollectionViewController.swift in Sources */,
 				959B7CE0245E02BA00664D6B /* FirebaseAuthManager.swift in Sources */,
