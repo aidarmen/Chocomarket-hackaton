@@ -19,18 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>chocomarket-hackaton-b9628.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:1062233292930:ios:b31d068abd46a332f7749b</string>
 	<key>DATABASE_URL</key>
-	<string>https://chocomarket-hackaton-b9628.firebaseio.com</string>
+	<string>https://chocomarket-hackaton-b9628.firebaseio.com/</string>
 </dict>
 </plist>

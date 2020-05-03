@@ -31,6 +31,8 @@ class logInViewController: UIViewController {
         
         
         
+        
+        
         FirebaseAuth.Auth.auth().signIn(withEmail: emailText.text!, password: passwordText.text!) { (result, error) in
             
             print("zashel")
@@ -38,11 +40,7 @@ class logInViewController: UIViewController {
                 self.errorLabel.text = "Wrong Data"
                 self.errorLabel.textColor = UIColor.red
             } else {
-//                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//                let deliverVC = storyboard.instantiateViewController(identifier: "test2") as! DeliveriesCollectionViewController
-//                self.navigationController?.pushViewController(deliverVC, animated: true)
-                
-//                self.performSegue(withIdentifier: "mySegueIdentifier", sender: nil)
+                _ = self.navigationController?.popToRootViewController(animated: true)
                 
                 self.errorLabel.text = "Success"
                 self.errorLabel.textColor = UIColor.green

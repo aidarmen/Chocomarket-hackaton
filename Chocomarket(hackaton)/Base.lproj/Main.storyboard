@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="WsL-Im-7HR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hOh-Mg-8UG">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -13,6 +13,7 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="hOh-Mg-8UG" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="3tF-4Z-K2W"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9QI-Gm-FVZ">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -117,6 +118,12 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Delivery" id="bY3-IN-0Ki">
+                        <barButtonItem key="leftBarButtonItem" title="LogOut" id="0Xa-Ds-GUu">
+                            <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="logoutButton:" destination="3OY-k2-qIR" id="y6f-in-b6P"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NNk-wN-4HW">
                             <connections>
                                 <segue destination="lSD-g9-FgF" kind="show" id="H9d-cS-cTh"/>
@@ -300,7 +307,7 @@ files or click upload</string>
         <!--Initial View Controller-->
         <scene sceneID="M4o-ae-6kj">
             <objects>
-                <viewController id="dZy-0F-Y5C" customClass="InitialViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initial" hidesBottomBarWhenPushed="YES" id="dZy-0F-Y5C" customClass="InitialViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IC8-tU-bPE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

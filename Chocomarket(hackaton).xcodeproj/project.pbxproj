@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1CC457D9245EC3E80048532C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1CC457D8245EC3E80048532C /* GoogleService-Info.plist */; };
 		5709942058D7E4B8B6410760 /* Pods_Chocomarket_hackaton_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */; };
 		9552B7B9245C5E57003C436E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7B8245C5E57003C436E /* AppDelegate.swift */; };
 		9552B7BB245C5E57003C436E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9552B7BA245C5E57003C436E /* SceneDelegate.swift */; };
@@ -22,13 +21,13 @@
 		959B7CDA245DDC4000664D6B /* signInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CD9245DDC4000664D6B /* signInViewController.swift */; };
 		959B7CDE245DF4A900664D6B /* logInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDD245DF4A900664D6B /* logInViewController.swift */; };
 		959B7CE0245E02BA00664D6B /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */; };
+		95BD62BF245EC5720086F131 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BD62BE245EC5720086F131 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FFC1500A82E78F66F9A2FDF /* Pods-Chocomarket(hackaton).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).debug.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).debug.xcconfig"; sourceTree = "<group>"; };
 		1577ABB5A2B9FEAB56EC36E2 /* Pods_Chocomarket_hackaton_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Chocomarket_hackaton_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		169E8E07AF3E029A6E4E8B33 /* Pods-Chocomarket(hackaton).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chocomarket(hackaton).release.xcconfig"; path = "Target Support Files/Pods-Chocomarket(hackaton)/Pods-Chocomarket(hackaton).release.xcconfig"; sourceTree = "<group>"; };
-		1CC457D8245EC3E80048532C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9552B7B5245C5E57003C436E /* Chocomarket(hackaton).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chocomarket(hackaton).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9552B7B8245C5E57003C436E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9552B7BA245C5E57003C436E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +43,7 @@
 		959B7CD9245DDC4000664D6B /* signInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInViewController.swift; sourceTree = "<group>"; };
 		959B7CDD245DF4A900664D6B /* logInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logInViewController.swift; sourceTree = "<group>"; };
 		959B7CDF245E02BA00664D6B /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
+		95BD62BE245EC5720086F131 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +96,7 @@
 		9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */ = {
 			isa = PBXGroup;
 			children = (
+				95BD62BE245EC5720086F131 /* GoogleService-Info.plist */,
 				9552B7D4245C8604003C436E /* ProductManageViewController.swift */,
 				9552B7D0245C817A003C436E /* ProductsTableViewController.swift */,
 				9552B7CC245C65E4003C436E /* DeliveriesCollectionViewController.swift */,
@@ -110,7 +111,6 @@
 				9552B7C1245C5E5C003C436E /* Assets.xcassets */,
 				9552B7C3245C5E5C003C436E /* LaunchScreen.storyboard */,
 				9552B7C6245C5E5C003C436E /* Info.plist */,
-				1CC457D8245EC3E80048532C /* GoogleService-Info.plist */,
 			);
 			path = "Chocomarket(hackaton)";
 			sourceTree = "<group>";
@@ -176,7 +176,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7C5245C5E5C003C436E /* LaunchScreen.storyboard in Resources */,
-				1CC457D9245EC3E80048532C /* GoogleService-Info.plist in Resources */,
+				95BD62BF245EC5720086F131 /* GoogleService-Info.plist in Resources */,
 				9552B7C2245C5E5C003C436E /* Assets.xcassets in Resources */,
 				9552B7C0245C5E57003C436E /* Main.storyboard in Resources */,
 			);

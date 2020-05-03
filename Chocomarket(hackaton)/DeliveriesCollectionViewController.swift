@@ -9,19 +9,21 @@
 import UIKit
 import Firebase
 import FirebaseAuth
-
+import FirebaseDatabase
 
 class DeliveriesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UINavigationBarDelegate {
 
-
+    var ref: DatabaseReference?
+    var databaseHandle:DatabaseHandle?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let width = (view.frame.size.width - 50)
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width-200)
-
-
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,33 +41,44 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         return 1
     }
     
+    @IBAction func logoutButton(_ sender: Any) {
+    do {
+        try Auth.auth().signOut()
+    } catch {
+        print("User creation failed with error:")
+    }
+        let secondViewController = (self.storyboard?.instantiateViewController(withIdentifier: "initial"))! as! InitialViewController
+        self.navigationController!.pushViewController(secondViewController, animated: true)
+    }
+    
+    
         override func viewWillAppear(_ animated: Bool) {
-            print("tut")
-//            if(Auth.auth().currentUser == nil){
-//                print("gavno")
-//            }
-            Auth.auth().addStateDidChangeListener { auth, user in
-              if let user = user {
-                // User is signed in. Show home screen
-                print("da")
-                
-//                ref.child("users").child(user.uid).observeSingleEvent(of: .value, with: { (snapshot) in
-//                  // Get user value
-//                  let value = snapshot.value as? NSDictionary
-//                  let username = value?["username"] as? String ?? ""
-//                  let user = User(username: username)
-//
-//                  // ...
-//                  }) { (error) in
-//                    print(error.localizedDescription)
+            
+            
+            
+//            if(Auth.auth().currentUser != nil){
+//            let userID : String = (Auth.auth().currentUser?.uid)!
+//             print("Current user ID is" + userID)
+//            ref = Database.database().reference()
+//            self.ref?.child("first_name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
+//                print("qqqqqqqqqq")
+//                let db = Firestore.firestore()
+//                db.collection("users").getDocuments { (query, error) in
+//                    let document = query?.documents.first?.data()["phone"]
+//                    print(document!)
 //                }
-              } else {
-                // No User is signed in. Show user the login screen
-                print("net")
-              }
+//
+//
+//             })
+//    }
+            
+            if(Auth.auth().currentUser == nil){
+                let secondViewController = (self.storyboard?.instantiateViewController(withIdentifier: "initial"))! as! InitialViewController
+                self.navigationController!.pushViewController(secondViewController, animated: true)
             }
-        
-        }
+            
+            print("logout")
+    }
         override func viewWillDisappear(_ animated: Bool) {
             
         }
