@@ -27,6 +27,8 @@
 		95BD62BF245EC5720086F131 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95BD62BE245EC5720086F131 /* GoogleService-Info.plist */; };
 		95BD62C2245EEE1A0086F131 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD62C1245EEE1A0086F131 /* Products.swift */; };
 		95BD62C3245EEF700086F131 /* Deliveries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BD62C0245EED810086F131 /* Deliveries.swift */; };
+		95D6B0842460517700993921 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6B0832460517300993921 /* ChatViewController.swift */; };
+		95D6B087246060F700993921 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D6B086246060F700993921 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +56,9 @@
 		95BD62BE245EC5720086F131 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95BD62C0245EED810086F131 /* Deliveries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deliveries.swift; sourceTree = "<group>"; };
 		95BD62C1245EEE1A0086F131 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		95D6B0832460517300993921 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		95D6B08524605BBA00993921 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		95D6B086246060F700993921 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,7 @@
 		9552B7AC245C5E57003C436E = {
 			isa = PBXGroup;
 			children = (
+				95D6B08524605BBA00993921 /* Bridging-Header.h */,
 				9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */,
 				9552B7B6245C5E57003C436E /* Products */,
 				6BB33CC9EDE8023AE0AFE402 /* Pods */,
@@ -106,6 +112,8 @@
 		9552B7B7245C5E57003C436E /* Chocomarket(hackaton) */ = {
 			isa = PBXGroup;
 			children = (
+				95D6B086246060F700993921 /* Constants.swift */,
+				95D6B0832460517300993921 /* ChatViewController.swift */,
 				950B2F63245F417D004A5350 /* myDeliveryProductsTableViewController.swift */,
 				950B2F61245F202D004A5350 /* deliveryProductsTableViewController.swift */,
 				950B2F5F245F129A004A5350 /* MyDeliveriesCollectionViewController.swift */,
@@ -247,7 +255,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9552B7CF245C6626003C436E /* DeliveriesCollectionViewCell.swift in Sources */,
+				95D6B087246060F700993921 /* Constants.swift in Sources */,
 				950B2F60245F16A7004A5350 /* MyDeliveriesCollectionViewController.swift in Sources */,
+				95D6B0842460517700993921 /* ChatViewController.swift in Sources */,
 				95BD62C2245EEE1A0086F131 /* Products.swift in Sources */,
 				950B2F62245F2032004A5350 /* deliveryProductsTableViewController.swift in Sources */,
 				950B2F64245F4182004A5350 /* myDeliveryProductsTableViewController.swift in Sources */,
@@ -415,6 +425,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,6 +446,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "q.Chocomarket-hackaton-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

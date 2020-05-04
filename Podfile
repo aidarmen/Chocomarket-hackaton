@@ -15,6 +15,7 @@ pod 'EmptyDataSet-Swift'
 pod 'NVActivityIndicatorView/AppExtension'
 pod 'JGProgressHUD'
 pod 'Firebase/Database'
+pod 'JSQMessagesViewController'
 
 
   # Pods for Chocomarket(hackaton)

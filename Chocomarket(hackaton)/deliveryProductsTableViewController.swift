@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class deliveryProductsTableViewController: UITableViewController {
 
+    
+    
+    var id = ""
     var index:Int = 5
     var products: Dictionary<String, [String]>?
     override func viewDidLoad() {
@@ -17,6 +22,28 @@ class deliveryProductsTableViewController: UITableViewController {
         
     }
 
+    @IBAction func takeButtonTapped(_ sender: Any) {
+        
+        print(id, "pihaem v eto idishku", index, "s indexom")
+        let userId = Auth.auth().currentUser?.uid
+        let db = Firestore.firestore()
+
+        db.collection("users").getDocuments { (snapshot, error) in
+            let document = snapshot?.documents
+            for i in 0...((snapshot?.documents.count)!-1){
+                if(document![i].data()["uid"] as! String == userId!){
+                    db.collection("Deliveries").document(self.id).updateData(["delivererId" : userId!,
+                    "delivererName": document![i].data()["name"] as! String,
+                    "inProcess": "inProcess"
+                    ])
+                    
+                    break
+                }
+            }
+        }
+        
+        
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

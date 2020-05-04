@@ -13,6 +13,7 @@ import FirebaseDatabase
 
 class DeliveriesCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UINavigationBarDelegate, DeliveryCellDelegate {
     
+    var documentIds:[String] = []
     var indexOfProduct = 35
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
@@ -24,29 +25,36 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         if let indexPath = collectionView.indexPath(for: sender){
             var items = deliveries[indexPath.row]
             indexOfProduct = indexPath.row
+            
             print("tuta")
         }
     }
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         indexOfProduct = indexPath.row
+        
         performSegue(withIdentifier: "showDeliveryProducts", sender: nil)
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        deliveries = []
+        self.documentIds = []
+        collectionView.reloadData()
+        print("yshel")
+        
+    }
+    
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDeliveryProducts"{
             let destin = segue.destination as? deliveryProductsTableViewController
-           // destin?.index = indexOfProduct
+            destin?.index = indexOfProduct
             let item = deliveries[indexOfProduct]
+            destin?.id = documentIds[indexOfProduct]
             destin?.products = item.products
         }
     }
-    
-    
-    
-
-    
     
     
     override func viewDidLoad() {
@@ -55,38 +63,7 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         let width = (view.frame.size.width - 50)
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width-200)
-        ref = Database.database().reference()
-        let db = Firestore.firestore()
-        db.collection("Deliveries").getDocuments { (snapshot, error) in
-            let document = snapshot?.documents
-//            print(type(of: ))
-            
-            
-            for i in 0...(snapshot?.documents.count)!-1{
-                let deliverer = document![i].data()["deliverer"] as! String?
-                let inProcess = document![i].data()["inProcess"] as! String
-                let id = document![i].data()["id"] as! String?
-                let objectId = document![i].documentID
-                let products = document![i].data()["products"] as! Dictionary<String, [String]>
-                
-//                print(type(of: inProcess), "process")
-//                print(type(of: deliverer), "deliver")
-//                print(type(of: objectId), "id")
-//                print(type(of: products), "produ")if
-                
-                if(inProcess != "inProcess"){
-                    let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products, id: id)
-                DispatchQueue.main.async {
-                    self.deliveries.append(newDelivery)
-                    self.collectionView.reloadData()
-                }
-                
-                }
-            }
         
-
-            
-        }
         // Do any additional setup after loading the view.
         
 //        print(self.deliveries.count)
@@ -119,22 +96,21 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
     }
     
     
-    override func viewDidDisappear(_ animated: Bool) {
-//        deliveries = []
-    }
+    
     
     
     
         override func viewWillAppear(_ animated: Bool) {
-            
-            print(indexOfProduct, "idishka")
-            
+                      
             if(Auth.auth().currentUser != nil){
             let userID : String = (Auth.auth().currentUser?.uid)!
+                Auth.auth().currentUser?.reload(completion: { (Error) in
+                    
+                })
+                
              print("Current user ID is" + userID)
             ref = Database.database().reference()
             self.ref?.child("name").child(userID).observeSingleEvent(of: .value, with: {(snapshot) in
-                //print("qqqqqqqqqq")
                 let db = Firestore.firestore()
                 db.collection("users").getDocuments { (query, error) in
                     let document = query?.documents.first?.data()["phone"]
@@ -150,13 +126,45 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
                 self.navigationController!.pushViewController(secondViewController, animated: true)
             }
             
-            
+            ref = Database.database().reference()
+                    let db = Firestore.firestore()
+                    db.collection("Deliveries").getDocuments { (snapshot, error) in
+                        let document = snapshot?.documents
+            //            print(type(of: ))
+                        
+                        
+                        for i in 0...(snapshot?.documents.count)!-1{
+                            let deliverer = document![i].data()["delivererName"] as! String?
+                            let inProcess = document![i].data()["inProcess"] as! String
+                            let id = document![i].data()["delivererId"] as! String?
+                            let objectId = document![i].documentID
+//                            print(objectId, "objectif")
+                            let products = document![i].data()["products"] as! Dictionary<String, [String]>
+                            
+            //                print(type(of: inProcess), "process")
+            //                print(type(of: deliverer), "deliver")
+            //                print(type(of: objectId), "id")
+            //                print(type(of: products), "produ")if
+                            
+                            if(inProcess != "inProcess"){
+                                let newDelivery = Deliveries(deliverer: deliverer, inProcess: inProcess, objectId: objectId, products: products, id: id)
+                            DispatchQueue.main.async {
+                                self.deliveries.append(newDelivery)
+                                self.collectionView.reloadData()
+                            }
+                                self.documentIds.append(objectId)
+                            }
+                        }
+                    
+
+                        
+                    }
     }
         
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "deliveryCell", for: indexPath) as! DeliveriesCollectionViewCell
         
-//        cell.update(deliveryNumber: "Delivery #\(1)", deliveryDescr: "you should embed each of the view controllers attached to the Tab Bar Controller inside Navigation Control", statusImage: UIImage(systemName: "flag")!, statusName: "Not Taken")
+
         
         let delivery = deliveries[indexPath.row]
         

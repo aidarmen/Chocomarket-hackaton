@@ -11,19 +11,23 @@ import UIKit
 class myDeliveryProductsTableViewController: UITableViewController {
     
     var products: Dictionary<String, [String]>?
-
+    var id = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(products)
-        // Uncomment the following line to preserve selection between presentations
+       // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
-    // MARK: - Table view data source
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "message"{
+            let destin = segue.destination as? ChatViewController
+            destin?.idZakaza = id
+        }
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1

@@ -171,11 +171,33 @@
                             <outlet property="delegate" destination="7k2-Xl-agb" id="9mD-Lr-YwQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Products" id="1hK-sr-E74"/>
+                    <navigationItem key="navigationItem" title="Products" id="1hK-sr-E74">
+                        <barButtonItem key="rightBarButtonItem" title="Take" id="l4n-hx-QLo">
+                            <connections>
+                                <action selector="takeButtonTapped:" destination="7k2-Xl-agb" id="tHI-ER-uLi"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eeb-lf-it8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1290" y="-225"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="ZBb-93-V07">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4EW-fN-FbI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="tF2-9I-t1p" customClass="ChatViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fJq-Du-2WL">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="LVa-YM-bv1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Jpm-9C-mjl"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1304" y="1219"/>
         </scene>
         <!--Products-->
         <scene sceneID="gqs-EH-V3a">
@@ -223,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fr-xb-twV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="1198"/>
+            <point key="canvasLocation" x="1304" y="1869"/>
         </scene>
         <!--Product Manage View Controller-->
         <scene sceneID="mTQ-nD-4Ua">
@@ -289,7 +311,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vi-a0-Da2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="rJh-wv-lPf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2196" y="1198"/>
+            <point key="canvasLocation" x="2191" y="1869"/>
         </scene>
         <!--Initial View Controller-->
         <scene sceneID="M4o-ae-6kj">
@@ -522,7 +544,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="36" translatesAutoresizingMaskIntoConstraints="NO" id="OFS-xk-L7M">
                                 <rect key="frame" x="48" y="578" width="153.5" height="31"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-Dq-h2R">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LBH-Dq-h2R">
                                         <rect key="frame" x="0.0" y="0.0" width="51" height="31"/>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deliverer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx7-qX-FfI">
@@ -627,7 +649,6 @@
         <!--Item-->
         <scene sceneID="ZHZ-K7-BL9">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="F26-yE-YsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="i2m-2h-SgX" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" image="tray.and.arrow.down" catalog="system" selectedImage="tray.and.arrow.down" id="nsb-Kj-qjg"/>
                     <toolbarItems/>
@@ -640,6 +661,7 @@
                         <segue destination="vac-wR-f5G" kind="relationship" relationship="rootViewController" id="pNa-BJ-1hO"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F26-yE-YsN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-457" y="483"/>
         </scene>
@@ -758,7 +780,7 @@
             </objects>
             <point key="canvasLocation" x="419" y="483"/>
         </scene>
-        <!--Products-->
+        <!--My products-->
         <scene sceneID="f05-KK-svQ">
             <objects>
                 <tableViewController id="mwl-or-ibl" customClass="myDeliveryProductsTableViewController" customModule="Chocomarket_hackaton_" customModuleProvider="target" sceneMemberID="viewController">
@@ -797,7 +819,13 @@
                             <outlet property="delegate" destination="mwl-or-ibl" id="Dmn-Xb-dd6"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Products" id="h8B-bh-czM"/>
+                    <navigationItem key="navigationItem" title="My products" id="h8B-bh-czM">
+                        <barButtonItem key="rightBarButtonItem" title="Message" id="f5y-dT-f8X">
+                            <connections>
+                                <segue destination="tF2-9I-t1p" kind="show" identifier="message" id="2Mq-jI-QsQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWc-YL-26n" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

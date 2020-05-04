@@ -66,10 +66,16 @@ class signInViewController: UIViewController {
             let phone = phoneText.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let email = emailText.text!.trimmingCharacters(in: .whitespacesAndNewlines)
             let password = passwordText.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+            var position: String = ""
+            if(delivererOrNot.isOn){
+                position = "deliverer"
+            } else {
+                position = "manager"
+            }
             
             Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                 let db = Firestore.firestore()
-                db.collection("users").addDocument(data: ["name" : firstName, "phone": phone, "email": email, "password": password, "uid": result!.user.uid]) { (error) in
+                db.collection("users").addDocument(data: ["name" : firstName, "phone": phone, "email": email, "password": password, "uid": result!.user.uid, "position": position]) { (error) in
                     if error != nil {
                         // Show error message
                         self.errorLabel.text = "Error saving user data"

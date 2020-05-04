@@ -18,7 +18,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
     }
     var counter = 0
 
-    
+    var documentIds:[String] = []
     var ref: DatabaseReference?
     var databaseHandle:DatabaseHandle?
     
@@ -35,6 +35,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
     override func viewDidDisappear(_ animated: Bool) {
         deliveries = []
         counter = 0
+        self.documentIds = []
         collectionView.reloadData()
         print("yshel")
         
@@ -59,8 +60,8 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
                             
                             
                             for i in 0...(snapshot?.documents.count)!-1{
-                                let deliverer = document![i].data()["deliverer"] as! String?
-                                let id = document![i].data()["id"] as! String?
+                                let deliverer = document![i].data()["delivererName"] as! String?
+                                let id = document![i].data()["delivererId"] as! String?
                                 let inProcess = document![i].data()["inProcess"] as! String
                                 let objectId = document![i].documentID
                                 let products = document![i].data()["products"] as! Dictionary<String, [String]>
@@ -86,7 +87,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
                                                     self.deliveries.append(newDelivery)
                                                     self.collectionView.reloadData()
                                                 }
-                                                
+                                                self.documentIds.append(objectId)
                                                 }
                                             }
 
@@ -120,6 +121,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
             let destin = segue.destination as? myDeliveryProductsTableViewController
            // destin?.index = indexOfProduct
             let item = deliveries[indexOfProduct]
+            destin?.id = documentIds[indexOfProduct]
             print(item.products)
             destin?.products = item.products
         }
