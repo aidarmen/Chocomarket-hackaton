@@ -12,6 +12,8 @@ import FirebaseAuth
 
 class logInViewController: UIViewController {
 
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var passwordText: UITextField!
@@ -21,6 +23,8 @@ class logInViewController: UIViewController {
         super.viewDidLoad()
         submitButton.layer.cornerRadius = 20
         passwordText.isSecureTextEntry = true
+        emailLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        passwordLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
         // Do any additional setup after loading the view.
     }
 

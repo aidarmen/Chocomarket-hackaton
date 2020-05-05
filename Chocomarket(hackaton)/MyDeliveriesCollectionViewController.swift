@@ -27,7 +27,10 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let width = (view.frame.size.width - 50)
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        navigationController?.navigationBar.prefersLargeTitles = true
+        layout.itemSize = CGSize(width: width, height: width-250)
         
     }
     
@@ -48,9 +51,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
         print(deliveries.count)
         if(counter == 0){
             print(counter, "counter")
-            let width = (view.frame.size.width - 50)
-                let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-                layout.itemSize = CGSize(width: width, height: width-200)
+            
                 ref = Database.database().reference()
                 let db = Firestore.firestore()
                 
@@ -165,7 +166,7 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
                 if(delivery.inProcess == "inProcess"){
                     TakenOrNot = "In Process"
                     image = UIImage(systemName: "clock")!
-                    color = UIColor.yellow
+                    color = UIColor.orange
                 } else if(delivery.inProcess == "notTaken") {
                     TakenOrNot = "Not Taken"
                     image = UIImage(systemName: "flag")!
@@ -176,13 +177,14 @@ class MyDeliveriesCollectionViewController: UICollectionViewController, UICollec
                     color = UIColor.green
                 }
                 
-                cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image!, statusName: TakenOrNot, color: color!)
+                cell.update(deliveryNumber: "Delivery №", deliveryDescr: "\(delivery.objectId)", statusImage: image!, statusName: TakenOrNot, color: color!)
         //        cell.update(deliveryNumber: delivery.objectId, deliveryDescr: "Description", statusImage: <#T##UIImage#>, statusName: <#T##String#>)
-                cell.layer.cornerRadius = 10
+               // cell.layer.cornerRadius = 10
             
                 return cell
     }
 
+    
     // MARK: UICollectionViewDelegate
 
     /*

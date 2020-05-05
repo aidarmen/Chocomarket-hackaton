@@ -12,6 +12,11 @@ import Firebase
 
 class signInViewController: UIViewController {
 
+    @IBOutlet weak var delivererLabel: UILabel!
+    @IBOutlet weak var passwordLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var mobilePhoneLabel: UILabel!
+    @IBOutlet weak var firstNameLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var submitButton: UIButton!
     @IBOutlet weak var firstNameText: UITextField!
@@ -23,6 +28,15 @@ class signInViewController: UIViewController {
         super.viewDidLoad()
         submitButton.layer.cornerRadius = 20
         passwordText.isSecureTextEntry = true
+        
+        
+        delivererLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        firstNameLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        mobilePhoneLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        emailLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+        passwordLabel.font = UIFont(name:"HelveticaNeue-Bold", size: 16.0)
+
+
         // Do any additional setup after loading the view.
     }
     

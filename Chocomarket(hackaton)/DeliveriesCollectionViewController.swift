@@ -59,10 +59,10 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+navigationController?.navigationBar.prefersLargeTitles = true
         let width = (view.frame.size.width - 50)
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.itemSize = CGSize(width: width, height: width-200)
+        layout.itemSize = CGSize(width: width, height: width-250)
         
         // Do any additional setup after loading the view.
         
@@ -175,7 +175,7 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
         if(delivery.inProcess == "inProcess"){
             TakenOrNot = "In Process"
             image = UIImage(systemName: "clock")!
-            color = UIColor.yellow
+            color = UIColor.orange
         } else if(delivery.inProcess == "notTaken") {
             TakenOrNot = "Not Taken"
             image = UIImage(systemName: "flag")!
@@ -186,12 +186,14 @@ class DeliveriesCollectionViewController: UICollectionViewController, UICollecti
             color = UIColor.green
         }
         
-        cell.update(deliveryNumber: "\(delivery.objectId)", deliveryDescr: "Description", statusImage: image!, statusName: TakenOrNot, color: color!)
+        cell.update(deliveryNumber: "Delivery №", deliveryDescr: "\(delivery.objectId)", statusImage: image!, statusName: TakenOrNot, color: color!)
         
-        cell.layer.cornerRadius = 10
+        //cell.layer.cornerRadius = 10
     
         return cell
     }
+    
+    
 
     // MARK: UICollectionViewDelegate
 
